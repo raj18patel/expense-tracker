@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <!-- <meta
+      name="viewport" content="width=device-width, initial-scale=1.0"
+    /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-image: url('pexels-monstera-5849577.jpg');
+        background-repeat: no-repeat;
+        object-fit: fill;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    
+
+    
+  </head>
+  <body>
+  
+    <!-- <canvas id="myChart" style="width:100%;max-width:600px"></canvas> -->
+    
+        <div class="container" id="divToExport">
+          <h1 >Expense Tracker</h1>
+          <h4>Your Balance</h4>
+          <h1 id="balance">$0.00</h1>
+          <div class="inc-exp-container">
+            <div>
+              <h4>Income</h4>
+              <p id="money-plus" class="money-plus">
+                +$0.00
+              </p>
+            </div>
+            <div>
+              <h4>Expense</h4>
+              <p id="money-minus" class="money-minus">
+                -$0.00
+              </p>
+            </div>
+          </div>
+      <!-- <div id="whatToPrint" style="width: 500px;"> -->
+
+        <div class="container">
+          <canvas id="myChart"></canvas>
+      </div>
+      <script>
+        
+      </script>
+
+
+      
+          <!-- <h3>Add New Transition</h3> -->
+          <!-- <div id="testdiv" style="display:none"> -->
+            <form id="form">
+                <div class="form-control">
+                    <label for="text"><b>Text</b></label>
+                    <input type="text" id="text" placeholder="Enter Text...."/>
+                </div>
+                <label for="start"><b> Date:</b></label>
+                  <input type="date" id="date" name="trip-start" />
+                <!-- <div class="form-control">
+              <label for="DATE">Enter Date here...</label>
+                  <input type="date" id="date" placeholder="Enter Date Here..."/>
+              </div> -->
+                <div class="form-control">
+                  
+
+                    <label for="amount"><b>Amount</b> <br> (negative - expense ,positive - income )</label>
+                    <input type="number" id="amount" placeholder="Enter amount..."> 
+                    <label>Expense</label>
+                  <input type="radio" onchange="getRadioDetails()" value="-1" name="amount-type">
+                  <label><b>Income</b></label>
+                  <input type="radio" onchange="getRadioDetails()" name="amount-type" value="+1">
+                </div>
+                <button class="btn">add  transaction</button>
+                <h3>History</h3>
+                  <ul id="list" class="list">
+                  </ul>
+                  
+            </form>
+            <span class="float-end pt-2">
+              <button type="button" onclick="generatePDF()" class="btn-sm btn-danger pull-right" id="button-7">Export to PDF</button>
+            </span>
+            
+    
+    
+    
+    <!-- JavaYscript Project  -->
+    <script src="script.js"></script>
+  </body>
+</html>
